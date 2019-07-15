@@ -1,0 +1,38 @@
+<header><h1>Books</h1></header>
+
+<div class="header">
+	<div class="header1">
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Body</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @posts.each do |post| %>
+                <tr>
+                    <td><%= post.title %></td>
+                    <td><%= post.body %></td>
+                    <td><%= link_to "Show", show_post_path(post.id) %></td>
+                    <td><%= link_to "Edit", edit_post_path(post.id) %></td>
+                    <td><%= link_to "Destroy", destroy_post_path(post.id), method: :delete, "data-confirm" => "Are you Sure?" %></td>
+                </tr>
+                <% end %>
+            </tbody>
+        </table>
+        
+
+<div class="footer">
+    <%= form_for(@post) do |f| %>
+ 
+        <h4>Title</h4>
+        <%= f.text_field :title %>
+ 
+        <h4>Body</h4>
+        <%= f.text_area :body %><br>
+ 
+        <%= f.submit 'Create Books' %>
+ 
+    <% end %>
+</div>

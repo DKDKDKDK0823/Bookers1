@@ -1,0 +1,11 @@
+
+
+<div class="header">
+	<div class="header1">
+	        <p class="title">Title:</p><span><%= @post.title %></span>
+	        <p class="body">Body:</p><span><%= @post.body %></span><br>
+            <%= link_to "Edit", edit_post_path(@post.id) %>|
+            <%= link_to "Back", posts_new_path %>
+    </div>
+</div>
+
